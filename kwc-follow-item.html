@@ -124,8 +124,11 @@
                 return {
                     username: String,
                     level: Number,
-                    followed: Boolean,
-                    avatar: String
+                    avatar: String,
+                    followed: {
+                        type: Boolean,
+                        value: false,
+                    }
                 };
             }
             _onTapFollow (e) {
