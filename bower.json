@@ -1,0 +1,24 @@
+{
+  "name": "kwc-follow-item",
+  "authors": [
+    "Kano Computing"
+  ],
+  "description": "",
+  "main": "kwc-follow-item.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#2.0.0",
+    "iron-flex-layout": "^2.0.3",
+    "iron-image": "^2.2.1",
+    "kwc-style": "KanoComponents/kwc-style#^2.0.0"
+  }
+}
