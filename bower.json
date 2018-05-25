@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#2.0.0",
+    "polymer": "Polymer/polymer#^2.6.0",
     "iron-flex-layout": "^2.0.3",
     "iron-image": "^2.2.1",
     "kwc-style": "KanoComponents/kwc-style#^2.0.0"
