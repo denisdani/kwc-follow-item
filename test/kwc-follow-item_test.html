@@ -8,10 +8,10 @@
         <title>
             kwc-follow-item test</title>
 
-        <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-        <script src="../../web-component-tester/browser.js"></script>
+        <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        <script src="../../../wct-browser-legacy/browser.js"></script>
 
-        <link rel="import" href="../kwc-follow-item.html">
+        <script type="module" src="../kwc-follow-item.js"></script>
     </head>
 
     <body>
@@ -28,28 +28,29 @@
             </template>
         </test-fixture>
 
-        <script>
-            suite('kwc-follow-item', function () {
+        <script type="module">
+import '../kwc-follow-item.js';
+suite('kwc-follow-item', function () {
 
-                test('instantiating the element with default properties works', function () {
-                    var element = fixture('BasicTestFixture');
-                    assert.equal(element.prop1, 'kwc-follow-item');
-                    var elementShadowRoot = element.shadowRoot;
-                    var elementHeader = elementShadowRoot.querySelector('h2');
-                    assert.equal(elementHeader.innerHTML, 'Hello kwc-follow-item!');
-                });
+    test('instantiating the element with default properties works', function () {
+        var element = fixture('BasicTestFixture');
+        assert.equal(element.prop1, 'kwc-follow-item');
+        var elementShadowRoot = element.shadowRoot;
+        var elementHeader = elementShadowRoot.querySelector('h2');
+        assert.equal(elementHeader.innerHTML, 'Hello kwc-follow-item!');
+    });
 
-                test('setting a property on the element works', function () {
-                    // Create a test fixture
-                    var element = fixture('ChangedPropertyTestFixture');
-                    assert.equal(element.prop1, 'new-prop1');
-                    var elementShadowRoot = element.shadowRoot;
-                    var elementHeader = elementShadowRoot.querySelector('h2');
-                    assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
-                });
+    test('setting a property on the element works', function () {
+        // Create a test fixture
+        var element = fixture('ChangedPropertyTestFixture');
+        assert.equal(element.prop1, 'new-prop1');
+        var elementShadowRoot = element.shadowRoot;
+        var elementHeader = elementShadowRoot.querySelector('h2');
+        assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
+    });
 
-            });
-        </script>
+});
+</script>
 
     </body>
 
