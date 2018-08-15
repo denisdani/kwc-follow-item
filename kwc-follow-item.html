@@ -92,12 +92,14 @@
             <div class="follow-button">
                 <div class="follow-icon-wrapper">
                     <template is="dom-if" if="[[followed]]">
-                        <iron-image
-                            sizing="contain"
-                            class="followed-icon"
-                            src="/assets/icons/followed.svg"
-                            on-tap="_onTapFollow">
-                        </iron-image>
+                        <template is="dom-if" if="[[!followedIcon]]">
+                            <iron-image sizing="contain" class="followed-icon" src="/assets/icons/followed.svg" on-tap="_onTapFollow">
+                            </iron-image>
+                        </template>
+                        <template is="dom-if" if="[[followedIcon]]">
+                            <iron-image sizing="contain" class="followed-icon" src="[[followedIcon]]" on-tap="_onTapFollow">
+                            </iron-image>
+                        </template>
                     </template>
                     <template is="dom-if" if="[[!followed]]">
                         <div class="follow-icon" on-tap="_onTapFollow">
@@ -128,7 +130,11 @@
                     followed: {
                         type: Boolean,
                         value: false,
-                    }
+                    },
+                    followedIcon: {
+                        type: String,
+                        value: '',
+                    },
                 };
             }
             _onTapFollow (e) {
